@@ -1,254 +1,648 @@
----
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
----
+<main>
+  <section class="pc-wrap" aria-label="Pest Control Instant Quote">
+    <header class="pc-head">
+      <h1 class="pc-title">Pest Control Instant Quote</h1>
+      <p class="pc-sub">Pick your options. Get an instant estimate and send it on WhatsApp.</p>
+    </header>
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
+    <div class="pc-grid">
+      <!-- LEFT: Controls -->
+      <div class="pc-panel">
+        <div class="pc-block">
+          <div class="pc-label">Property type</div>
+          <div class="pc-choices" data-group="property">
+            <button class="pc-chip is-on" type="button" data-value="hdb">HDB</button>
+            <button class="pc-chip" type="button" data-value="condo">Condo</button>
+            <button class="pc-chip" type="button" data-value="landed">Landed</button>
+            <button class="pc-chip" type="button" data-value="commercial">Commercial</button>
+          </div>
+        </div>
 
-  <body>
-    <Header />
+        <div class="pc-block">
+          <div class="pc-label">Pest type</div>
+          <div class="pc-cards" data-group="pest">
+            <!-- You can replace images with your own or remove img tags -->
+            <button class="pc-card is-on" type="button" data-value="cockroaches" data-label="Cockroaches">
+              <img src="https://images.unsplash.com/photo-1619975109641-cc6f25d98fba?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
+              <div class="pc-card-body">
+                <div class="pc-card-title">Cockroaches</div>
+                <div class="pc-card-meta">Targeted treatment</div>
+              </div>
+            </button>
 
-    <main>
-      <section class="calc-wrapper">
-        <header class="calc-header">
-          <h1 class="calc-title">Instant Quote (Image Selector)</h1>
-          <p class="calc-subtitle">
-            Tap any service card to add/remove it. Total updates instantly.
-          </p>
-        </header>
+            <button class="pc-card" type="button" data-value="ants" data-label="Ants">
+              <img src="https://images.unsplash.com/photo-1557434440-1db8a5d855f1?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
+              <div class="pc-card-body">
+                <div class="pc-card-title">Ants</div>
+                <div class="pc-card-meta">Trail + nest control</div>
+              </div>
+            </button>
 
-        <div class="service-grid" id="serviceGrid">
-          <!-- Card 1 -->
-          <button
-            class="service-card"
-            type="button"
-            data-id="wash"
-            data-label="Exterior Wash"
-            data-price="80"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=1200&auto=format&fit=crop"
-              alt="Exterior wash"
-              loading="lazy"
-            />
-            <div class="service-content">
-              <div class="service-name">Exterior Wash</div>
-              <div class="service-price">+ SGD 80</div>
+            <button class="pc-card" type="button" data-value="termites" data-label="Termites">
+              <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
+              <div class="pc-card-body">
+                <div class="pc-card-title">Termites</div>
+                <div class="pc-card-meta">Assessment recommended</div>
+              </div>
+            </button>
+
+            <button class="pc-card" type="button" data-value="bed_bugs" data-label="Bed Bugs">
+              <img src="https://images.unsplash.com/photo-1583946099379-f9c9cb8bc030?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
+              <div class="pc-card-body">
+                <div class="pc-card-title">Bed Bugs</div>
+                <div class="pc-card-meta">Multi-step treatment</div>
+              </div>
+            </button>
+
+            <button class="pc-card" type="button" data-value="mosquitoes" data-label="Mosquitoes">
+              <img src="https://images.unsplash.com/photo-1615485737562-0e2d0e6c5b31?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
+              <div class="pc-card-body">
+                <div class="pc-card-title">Mosquitoes</div>
+                <div class="pc-card-meta">Outdoor fogging</div>
+              </div>
+            </button>
+
+            <button class="pc-card" type="button" data-value="rodents" data-label="Rodents">
+              <img src="https://images.unsplash.com/photo-1520808663317-647b476a81b9?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
+              <div class="pc-card-body">
+                <div class="pc-card-title">Rodents</div>
+                <div class="pc-card-meta">Traps + sealing advice</div>
+              </div>
+            </button>
+
+            <button class="pc-card" type="button" data-value="general" data-label="General Pest">
+              <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
+              <div class="pc-card-body">
+                <div class="pc-card-title">General Pest</div>
+                <div class="pc-card-meta">Broad coverage</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="pc-block pc-2col">
+          <div>
+            <div class="pc-label">Plan</div>
+            <div class="pc-choices" data-group="plan">
+              <button class="pc-chip is-on" type="button" data-value="one_time">One-time</button>
+              <button class="pc-chip" type="button" data-value="quarterly">Quarterly</button>
+              <button class="pc-chip" type="button" data-value="monthly">Monthly</button>
             </div>
+          </div>
+
+          <div>
+            <div class="pc-label">Urgency</div>
+            <div class="pc-choices" data-group="urgency">
+              <button class="pc-chip is-on" type="button" data-value="standard">Standard</button>
+              <button class="pc-chip" type="button" data-value="urgent">Urgent (same/next day)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pc-block">
+          <div class="pc-label">Access complexity</div>
+          <div class="pc-choices" data-group="access">
+            <button class="pc-chip is-on" type="button" data-value="normal">Normal</button>
+            <button class="pc-chip" type="button" data-value="hard">Hard (tight areas / high clutter)</button>
+          </div>
+        </div>
+
+        <div class="pc-block">
+          <div class="pc-label">Add-ons</div>
+          <div class="pc-addons">
+            <label class="pc-check">
+              <input type="checkbox" data-addon="inspection_report">
+              <span>Inspection report (+SGD 40)</span>
+            </label>
+            <label class="pc-check">
+              <input type="checkbox" data-addon="aftercare">
+              <span>30-day aftercare support (+SGD 30)</span>
+            </label>
+            <label class="pc-check">
+              <input type="checkbox" data-addon="gel_bait_upgrade">
+              <span>Gel bait upgrade (+SGD 35)</span>
+            </label>
+            <label class="pc-check">
+              <input type="checkbox" data-addon="rodent_traps">
+              <span>Extra traps (rodents) (+SGD 45)</span>
+            </label>
+            <label class="pc-check">
+              <input type="checkbox" data-addon="follow_up_visit">
+              <span>Follow-up visit (+SGD 90)</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Summary -->
+      <aside class="pc-panel pc-summary" aria-label="Quote Summary">
+        <div class="pc-sum-top">
+          <div class="pc-sum-title">Your estimate</div>
+          <div class="pc-sum-note">Final price may vary after onsite assessment.</div>
+        </div>
+
+        <div class="pc-sum-box">
+          <div class="pc-row">
+            <div class="pc-k">Property</div>
+            <div class="pc-v" id="pcOutProperty">HDB</div>
+          </div>
+          <div class="pc-row">
+            <div class="pc-k">Pest</div>
+            <div class="pc-v" id="pcOutPest">Cockroaches</div>
+          </div>
+          <div class="pc-row">
+            <div class="pc-k">Plan</div>
+            <div class="pc-v" id="pcOutPlan">One-time</div>
+          </div>
+          <div class="pc-row">
+            <div class="pc-k">Urgency</div>
+            <div class="pc-v" id="pcOutUrgency">Standard</div>
+          </div>
+          <div class="pc-row">
+            <div class="pc-k">Access</div>
+            <div class="pc-v" id="pcOutAccess">Normal</div>
+          </div>
+
+          <div class="pc-divider"></div>
+
+          <div class="pc-row pc-row-top">
+            <div class="pc-k">Selected add-ons</div>
+            <div class="pc-v pc-small" id="pcOutAddons">None</div>
+          </div>
+
+          <div class="pc-divider"></div>
+
+          <div class="pc-total">
+            <div>Total</div>
+            <div class="pc-money" id="pcOutTotal">SGD 0</div>
+          </div>
+        </div>
+
+        <div class="pc-actions">
+          <button class="pc-btn" id="pcWhatsAppBtn" type="button">
+            Send on WhatsApp
           </button>
-
-          <!-- Card 2 -->
-          <button
-            class="service-card"
-            type="button"
-            data-id="interior"
-            data-label="Interior Detailing"
-            data-price="120"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200&auto=format&fit=crop"
-              alt="Interior detailing"
-              loading="lazy"
-            />
-            <div class="service-content">
-              <div class="service-name">Interior Detailing</div>
-              <div class="service-price">+ SGD 120</div>
-            </div>
-          </button>
-
-          <!-- Card 3 -->
-          <button
-            class="service-card"
-            type="button"
-            data-id="engine"
-            data-label="Engine Bay Clean"
-            data-price="60"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1517520287167-4bbf64a00d66?q=80&w=1200&auto=format&fit=crop"
-              alt="Engine bay clean"
-              loading="lazy"
-            />
-            <div class="service-content">
-              <div class="service-name">Engine Bay Clean</div>
-              <div class="service-price">+ SGD 60</div>
-            </div>
+          <button class="pc-btn pc-ghost" id="pcCopyBtn" type="button">
+            Copy message
           </button>
         </div>
 
-        <div class="summary">
-          <div class="summary-left">
-            <div class="summary-title">Total</div>
-            <div class="summary-note" id="summaryNote">No services selected yet.</div>
-          </div>
+        <div class="pc-tip" id="pcTip" aria-live="polite"></div>
+      </aside>
+    </div>
+  </section>
 
-          <div class="summary-right">
-            <div class="total" id="totalPrice">SGD 0</div>
-          </div>
-        </div>
-      </section>
+  <!-- Astro inline script -->
+  <script is:inline>
+    (function () {
+      // ===== Config =====
+      const WHATSAPP_NUMBER = "6591837777"; // change this
+      const CURRENCY = "SGD";
 
-      <!-- Astro inline script -->
-      <script is:inline>
-        (function () {
-          const cards = document.querySelectorAll(".service-card");
-          const totalEl = document.getElementById("totalPrice");
-          const noteEl = document.getElementById("summaryNote");
+      // Base prices
+      const BASE_BY_PEST = {
+        ants: 120,
+        cockroaches: 150,
+        termites: 380,
+        bed_bugs: 420,
+        mosquitoes: 180,
+        rodents: 220,
+        general: 160,
+      };
 
-          const selected = new Map();
+      const MULT_PROPERTY = {
+        hdb: 1.0,
+        condo: 1.1,
+        landed: 1.35,
+        commercial: 1.45,
+      };
 
-          function formatSGD(n) {
-            // Simple formatting for demo; upgrade later if you want Intl.NumberFormat
-            return `SGD ${n}`;
-          }
+      const MULT_URGENCY = { standard: 1.0, urgent: 1.2 };
+      const MULT_ACCESS = { normal: 1.0, hard: 1.15 };
 
-          function updateUI() {
-            let total = 0;
-            const labels = [];
+      // Plan multipliers (representing bundled pricing)
+      const PLAN_MULT = {
+        one_time: 1.0,
+        quarterly: 2.6,
+        monthly: 4.6,
+      };
 
-            selected.forEach((price, label) => {
-              total += price;
-              labels.push(label);
-            });
+      const ADDONS = {
+        inspection_report: { label: "Inspection report", price: 40 },
+        aftercare: { label: "30-day aftercare support", price: 30 },
+        gel_bait_upgrade: { label: "Gel bait upgrade", price: 35 },
+        rodent_traps: { label: "Extra traps", price: 45 },
+        follow_up_visit: { label: "Follow-up visit", price: 90 },
+      };
 
-            totalEl.textContent = formatSGD(total);
+      // ===== State =====
+      const state = {
+        property: "hdb",
+        pest: "cockroaches",
+        pestLabel: "Cockroaches",
+        plan: "one_time",
+        urgency: "standard",
+        access: "normal",
+        addons: new Set(),
+      };
 
-            if (labels.length === 0) {
-              noteEl.textContent = "No services selected yet.";
-            } else {
-              noteEl.textContent = `Selected: ${labels.join(", ")}`;
-            }
-          }
+      // ===== Helpers =====
+      function money(n) {
+        // simple formatting; change if you want decimals
+        return `${CURRENCY} ${Math.round(n)}`;
+      }
 
-          cards.forEach((card) => {
-            card.addEventListener("click", () => {
-              const label = card.getAttribute("data-label") || "Service";
-              const price = Number(card.getAttribute("data-price") || 0);
+      function labelProperty(v){
+        return v === "hdb" ? "HDB" :
+               v === "condo" ? "Condo" :
+               v === "landed" ? "Landed" : "Commercial";
+      }
 
-              const isOn = card.classList.toggle("selected");
+      function labelPlan(v){
+        return v === "one_time" ? "One-time" :
+               v === "quarterly" ? "Quarterly" : "Monthly";
+      }
 
-              if (isOn) selected.set(label, price);
-              else selected.delete(label);
+      function labelUrgency(v){
+        return v === "standard" ? "Standard" : "Urgent (same/next day)";
+      }
 
-              updateUI();
-            });
-          });
+      function labelAccess(v){
+        return v === "normal" ? "Normal" : "Hard (tight areas / high clutter)";
+      }
 
-          updateUI();
-        })();
-      </script>
-    </main>
+      function computeTotal() {
+        const base = BASE_BY_PEST[state.pest] || 0;
+        const mult =
+          (MULT_PROPERTY[state.property] || 1) *
+          (PLAN_MULT[state.plan] || 1) *
+          (MULT_URGENCY[state.urgency] || 1) *
+          (MULT_ACCESS[state.access] || 1);
 
-    <Footer />
-  </body>
-</html>
+        let subtotal = base * mult;
+
+        let addonsTotal = 0;
+        state.addons.forEach((k) => {
+          addonsTotal += (ADDONS[k]?.price || 0);
+        });
+
+        const total = subtotal + addonsTotal;
+        return { total, base, subtotal, addonsTotal };
+      }
+
+      function buildMessage(total) {
+        const addonLabels = Array.from(state.addons).map((k) => ADDONS[k].label);
+
+        const lines = [
+          "Hi! I'd like a pest control quote:",
+          "",
+          `• Property: ${labelProperty(state.property)}`,
+          `• Pest: ${state.pestLabel}`,
+          `• Plan: ${labelPlan(state.plan)}`,
+          `• Urgency: ${labelUrgency(state.urgency)}`,
+          `• Access: ${labelAccess(state.access)}`,
+          `• Add-ons: ${addonLabels.length ? addonLabels.join(", ") : "None"}`,
+          "",
+          `Estimated Total: ${money(total)}`,
+          "",
+          "Please advise earliest availability. Thank you!",
+        ];
+
+        return lines.join("\n");
+      }
+
+      function setActive(groupEl, value) {
+        groupEl.querySelectorAll("button").forEach((btn) => {
+          btn.classList.toggle("is-on", btn.getAttribute("data-value") === value);
+        });
+      }
+
+      function setActiveCards(groupEl, value) {
+        groupEl.querySelectorAll("button").forEach((btn) => {
+          btn.classList.toggle("is-on", btn.getAttribute("data-value") === value);
+        });
+      }
+
+      function render() {
+        const { total } = computeTotal();
+
+        // Outputs
+        document.getElementById("pcOutProperty").textContent = labelProperty(state.property);
+        document.getElementById("pcOutPest").textContent = state.pestLabel;
+        document.getElementById("pcOutPlan").textContent = labelPlan(state.plan);
+        document.getElementById("pcOutUrgency").textContent = labelUrgency(state.urgency);
+        document.getElementById("pcOutAccess").textContent = labelAccess(state.access);
+
+        const addonLabels = Array.from(state.addons).map((k) => ADDONS[k].label);
+        document.getElementById("pcOutAddons").textContent = addonLabels.length ? addonLabels.join(", ") : "None";
+
+        document.getElementById("pcOutTotal").textContent = money(total);
+
+        // Store message for actions
+        const msg = buildMessage(total);
+        document.getElementById("pcWhatsAppBtn").setAttribute(
+          "data-wa",
+          `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`
+        );
+        document.getElementById("pcCopyBtn").setAttribute("data-msg", msg);
+      }
+
+      // ===== Bind groups =====
+      document.querySelectorAll('[data-group="property"]').forEach((group) => {
+        group.addEventListener("click", (e) => {
+          const btn = e.target.closest("button");
+          if (!btn) return;
+          state.property = btn.getAttribute("data-value");
+          setActive(group, state.property);
+          render();
+        });
+      });
+
+      document.querySelectorAll('[data-group="plan"]').forEach((group) => {
+        group.addEventListener("click", (e) => {
+          const btn = e.target.closest("button");
+          if (!btn) return;
+          state.plan = btn.getAttribute("data-value");
+          setActive(group, state.plan);
+          render();
+        });
+      });
+
+      document.querySelectorAll('[data-group="urgency"]').forEach((group) => {
+        group.addEventListener("click", (e) => {
+          const btn = e.target.closest("button");
+          if (!btn) return;
+          state.urgency = btn.getAttribute("data-value");
+          setActive(group, state.urgency);
+          render();
+        });
+      });
+
+      document.querySelectorAll('[data-group="access"]').forEach((group) => {
+        group.addEventListener("click", (e) => {
+          const btn = e.target.closest("button");
+          if (!btn) return;
+          state.access = btn.getAttribute("data-value");
+          setActive(group, state.access);
+          render();
+        });
+      });
+
+      // Pest cards
+      document.querySelectorAll('[data-group="pest"]').forEach((group) => {
+        group.addEventListener("click", (e) => {
+          const btn = e.target.closest("button");
+          if (!btn) return;
+          state.pest = btn.getAttribute("data-value");
+          state.pestLabel = btn.getAttribute("data-label") || "Pest";
+          setActiveCards(group, state.pest);
+          render();
+        });
+      });
+
+      // Add-ons
+      document.querySelectorAll("input[type=checkbox][data-addon]").forEach((cb) => {
+        cb.addEventListener("change", () => {
+          const key = cb.getAttribute("data-addon");
+          if (!key) return;
+          if (cb.checked) state.addons.add(key);
+          else state.addons.delete(key);
+          render();
+        });
+      });
+
+      // Actions
+      const tip = document.getElementById("pcTip");
+
+      document.getElementById("pcWhatsAppBtn").addEventListener("click", () => {
+        const url = document.getElementById("pcWhatsAppBtn").getAttribute("data-wa");
+        window.open(url, "_blank", "noopener,noreferrer");
+      });
+
+      document.getElementById("pcCopyBtn").addEventListener("click", async () => {
+        const msg = document.getElementById("pcCopyBtn").getAttribute("data-msg") || "";
+        try {
+          await navigator.clipboard.writeText(msg);
+          tip.textContent = "Copied message to clipboard.";
+          setTimeout(() => (tip.textContent = ""), 1800);
+        } catch (err) {
+          // fallback
+          tip.textContent = "Clipboard blocked. Select & copy manually from your browser.";
+          setTimeout(() => (tip.textContent = ""), 2200);
+        }
+      });
+
+      // Initial render
+      render();
+    })();
+  </script>
+</main>
 
 <style>
-  .calc-wrapper {
-    max-width: 980px;
+  /* Layout */
+  .pc-wrap{
+    max-width: 1100px;
     margin: 40px auto;
     padding: 0 16px;
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   }
+  .pc-head{ margin-bottom: 18px; }
+  .pc-title{ margin: 0 0 8px; font-size: 30px; letter-spacing:-0.02em; }
+  .pc-sub{ margin:0; opacity:.75; line-height:1.5; }
 
-  .calc-header {
-    margin-bottom: 18px;
-  }
-
-  .calc-title {
-    font-size: 28px;
-    font-weight: 700;
-    margin: 0 0 8px;
-    letter-spacing: -0.02em;
-  }
-
-  .calc-subtitle {
-    margin: 0;
-    opacity: 0.75;
-    line-height: 1.5;
-  }
-
-  .service-grid {
+  .pc-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
+    grid-template-columns: 1.25fr .85fr;
+    gap: 18px;
+    align-items: start;
+  }
+  @media (max-width: 980px){
+    .pc-grid{ grid-template-columns: 1fr; }
   }
 
-  .service-card {
-    padding: 0;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 16px;
-    overflow: hidden;
-    cursor: pointer;
+  .pc-panel{
+    border: 1px solid rgba(0,0,0,.10);
     background: #fff;
-    text-align: left;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    border-radius: 18px;
+    padding: 16px;
   }
 
-  .service-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-  }
-
-  .service-card.selected {
-    border-color: rgba(0, 0, 0, 0.55);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-  }
-
-  .service-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    display: block;
-  }
-
-  .service-content {
-    padding: 12px 12px 14px;
-  }
-
-  .service-name {
-    font-weight: 700;
-    margin-bottom: 6px;
-    font-size: 15px;
-    line-height: 1.2;
-  }
-
-  .service-price {
+  .pc-block{ margin-bottom: 14px; }
+  .pc-label{
     font-size: 13px;
-    opacity: 0.75;
+    font-weight: 650;
+    opacity: .8;
+    margin-bottom: 8px;
   }
 
-  .summary {
-    margin-top: 18px;
-    padding: 14px 16px;
-    border-radius: 16px;
-    background: rgba(0, 0, 0, 0.04);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  /* Chips */
+  .pc-choices{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .pc-chip{
+    border: 1px solid rgba(0,0,0,.14);
+    background: #fff;
+    border-radius: 999px;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-weight: 650;
+    font-size: 13px;
+    transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+  }
+  .pc-chip:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,.06); }
+  .pc-chip.is-on{
+    border-color: rgba(0,0,0,.55);
+    box-shadow: 0 12px 24px rgba(0,0,0,.10);
+  }
+
+  .pc-2col{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 540px){
+    .pc-2col{ grid-template-columns: 1fr; }
+  }
+
+  /* Pest Cards */
+  .pc-cards{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
     gap: 12px;
   }
-
-  .summary-title {
-    font-size: 13px;
-    opacity: 0.75;
-    margin-bottom: 4px;
+  @media (max-width: 980px){
+    .pc-cards{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+  @media (max-width: 520px){
+    .pc-cards{ grid-template-columns: 1fr; }
   }
 
-  .summary-note {
+  .pc-card{
+    padding:0;
+    text-align:left;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 16px;
+    overflow:hidden;
+    cursor:pointer;
+    background:#fff;
+    transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+  }
+  .pc-card:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px rgba(0,0,0,.08);
+  }
+  .pc-card.is-on{
+    border-color: rgba(0,0,0,.55);
+    box-shadow: 0 14px 30px rgba(0,0,0,.12);
+  }
+  .pc-card img{
+    width:100%;
+    height: 110px;
+    object-fit: cover;
+    display:block;
+    background: rgba(0,0,0,.04);
+  }
+  .pc-card-body{ padding: 10px 10px 12px; }
+  .pc-card-title{ font-weight: 800; font-size: 14px; margin:0 0 4px; }
+  .pc-card-meta{ font-size: 12px; opacity: .72; }
+
+  /* Add-ons */
+  .pc-addons{
+    display:grid;
+    gap: 10px;
+  }
+  .pc-check{
+    display:flex;
+    align-items:center;
+    gap:10px;
     font-size: 13px;
-    opacity: 0.75;
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: 14px;
+    padding: 10px 12px;
+    background: rgba(0,0,0,.02);
+  }
+  .pc-check input{ transform: scale(1.05); }
+
+  /* Summary */
+  .pc-summary{
+    position: sticky;
+    top: 14px;
+  }
+  @media (max-width: 980px){
+    .pc-summary{ position: static; }
   }
 
-  .total {
+  .pc-sum-title{ font-size: 16px; font-weight: 900; margin-bottom: 6px; }
+  .pc-sum-note{ font-size: 13px; opacity:.7; line-height:1.45; }
+
+  .pc-sum-box{
+    margin-top: 14px;
+    border-radius: 16px;
+    background: rgba(0,0,0,.035);
+    padding: 12px;
+  }
+  .pc-row{
+    display:flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 7px 4px;
+  }
+  .pc-k{ font-size: 13px; opacity: .75; }
+  .pc-v{ font-size: 13px; font-weight: 750; text-align:right; }
+  .pc-small{ font-weight: 650; opacity: .9; }
+
+  .pc-divider{
+    height: 1px;
+    background: rgba(0,0,0,.10);
+    margin: 10px 0;
+  }
+
+  .pc-total{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 6px 4px 2px;
+    font-weight: 900;
+  }
+  .pc-money{
     font-size: 18px;
-    font-weight: 800;
+    letter-spacing: -0.01em;
     white-space: nowrap;
+  }
+
+  .pc-actions{
+    display:grid;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .pc-btn{
+    width:100%;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 14px;
+    padding: 12px 12px;
+    font-weight: 850;
+    cursor:pointer;
+    background:#111;
+    color:#fff;
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  }
+  .pc-btn:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(0,0,0,.14);
+  }
+  .pc-btn:active{ transform: translateY(0px); opacity:.92; }
+
+  .pc-ghost{
+    background:#fff;
+    color:#111;
+  }
+
+  .pc-tip{
+    margin-top: 10px;
+    font-size: 13px;
+    opacity: .8;
+    min-height: 18px; /* keeps layout stable */
   }
 </style>
