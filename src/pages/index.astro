@@ -2,146 +2,130 @@
   <section class="pc-wrap" aria-label="Pest Control Instant Quote">
     <header class="pc-head">
       <h1 class="pc-title">Pest Control Instant Quote</h1>
-      <p class="pc-sub">Pick your options. Get an instant estimate and send it on WhatsApp.</p>
+      <p class="pc-sub">
+        Select your service options and add-ons. Your estimate updates instantly and you can send the details on WhatsApp.
+      </p>
     </header>
 
     <div class="pc-grid">
-      <!-- LEFT: Controls -->
-      <div class="pc-panel">
+      <!-- LEFT: Form -->
+      <div class="pc-panel" aria-label="Quote options">
         <div class="pc-block">
-          <div class="pc-label">Property type</div>
-          <div class="pc-choices" data-group="property">
-            <button class="pc-chip is-on" type="button" data-value="hdb">HDB</button>
-            <button class="pc-chip" type="button" data-value="condo">Condo</button>
-            <button class="pc-chip" type="button" data-value="landed">Landed</button>
-            <button class="pc-chip" type="button" data-value="commercial">Commercial</button>
-          </div>
-        </div>
+          <div class="pc-label">Service details</div>
 
-        <div class="pc-block">
-          <div class="pc-label">Pest type</div>
-          <div class="pc-cards" data-group="pest">
-            <!-- You can replace images with your own or remove img tags -->
-            <button class="pc-card is-on" type="button" data-value="cockroaches" data-label="Cockroaches">
-              <img src="https://images.unsplash.com/photo-1619975109641-cc6f25d98fba?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
-              <div class="pc-card-body">
-                <div class="pc-card-title">Cockroaches</div>
-                <div class="pc-card-meta">Targeted treatment</div>
-              </div>
-            </button>
+          <div class="pc-form">
+            <label class="pc-field">
+              <span class="pc-field-label">Property type</span>
+              <select id="pcProperty" class="pc-select">
+                <option value="hdb">HDB</option>
+                <option value="condo">Condo</option>
+                <option value="landed">Landed</option>
+                <option value="commercial">Commercial</option>
+              </select>
+            </label>
 
-            <button class="pc-card" type="button" data-value="ants" data-label="Ants">
-              <img src="https://images.unsplash.com/photo-1557434440-1db8a5d855f1?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
-              <div class="pc-card-body">
-                <div class="pc-card-title">Ants</div>
-                <div class="pc-card-meta">Trail + nest control</div>
-              </div>
-            </button>
+            <label class="pc-field">
+              <span class="pc-field-label">Pest type</span>
+              <select id="pcPest" class="pc-select">
+                <option value="cockroaches">Cockroaches</option>
+                <option value="ants">Ants</option>
+                <option value="termites">Termites</option>
+                <option value="bed_bugs">Bed bugs</option>
+                <option value="mosquitoes">Mosquitoes</option>
+                <option value="rodents">Rodents</option>
+                <option value="general">General pest</option>
+              </select>
+            </label>
 
-            <button class="pc-card" type="button" data-value="termites" data-label="Termites">
-              <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
-              <div class="pc-card-body">
-                <div class="pc-card-title">Termites</div>
-                <div class="pc-card-meta">Assessment recommended</div>
-              </div>
-            </button>
+            <label class="pc-field">
+              <span class="pc-field-label">Plan</span>
+              <select id="pcPlan" class="pc-select">
+                <option value="one_time">One-time</option>
+                <option value="quarterly">Quarterly</option>
+                <option value="monthly">Monthly</option>
+              </select>
+            </label>
 
-            <button class="pc-card" type="button" data-value="bed_bugs" data-label="Bed Bugs">
-              <img src="https://images.unsplash.com/photo-1583946099379-f9c9cb8bc030?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
-              <div class="pc-card-body">
-                <div class="pc-card-title">Bed Bugs</div>
-                <div class="pc-card-meta">Multi-step treatment</div>
-              </div>
-            </button>
+            <label class="pc-field">
+              <span class="pc-field-label">Urgency</span>
+              <select id="pcUrgency" class="pc-select">
+                <option value="standard">Standard</option>
+                <option value="urgent">Urgent (same/next day)</option>
+              </select>
+            </label>
 
-            <button class="pc-card" type="button" data-value="mosquitoes" data-label="Mosquitoes">
-              <img src="https://images.unsplash.com/photo-1615485737562-0e2d0e6c5b31?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
-              <div class="pc-card-body">
-                <div class="pc-card-title">Mosquitoes</div>
-                <div class="pc-card-meta">Outdoor fogging</div>
-              </div>
-            </button>
-
-            <button class="pc-card" type="button" data-value="rodents" data-label="Rodents">
-              <img src="https://images.unsplash.com/photo-1520808663317-647b476a81b9?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
-              <div class="pc-card-body">
-                <div class="pc-card-title">Rodents</div>
-                <div class="pc-card-meta">Traps + sealing advice</div>
-              </div>
-            </button>
-
-            <button class="pc-card" type="button" data-value="general" data-label="General Pest">
-              <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy">
-              <div class="pc-card-body">
-                <div class="pc-card-title">General Pest</div>
-                <div class="pc-card-meta">Broad coverage</div>
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <div class="pc-block pc-2col">
-          <div>
-            <div class="pc-label">Plan</div>
-            <div class="pc-choices" data-group="plan">
-              <button class="pc-chip is-on" type="button" data-value="one_time">One-time</button>
-              <button class="pc-chip" type="button" data-value="quarterly">Quarterly</button>
-              <button class="pc-chip" type="button" data-value="monthly">Monthly</button>
-            </div>
-          </div>
-
-          <div>
-            <div class="pc-label">Urgency</div>
-            <div class="pc-choices" data-group="urgency">
-              <button class="pc-chip is-on" type="button" data-value="standard">Standard</button>
-              <button class="pc-chip" type="button" data-value="urgent">Urgent (same/next day)</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="pc-block">
-          <div class="pc-label">Access complexity</div>
-          <div class="pc-choices" data-group="access">
-            <button class="pc-chip is-on" type="button" data-value="normal">Normal</button>
-            <button class="pc-chip" type="button" data-value="hard">Hard (tight areas / high clutter)</button>
+            <label class="pc-field">
+              <span class="pc-field-label">Access complexity</span>
+              <select id="pcAccess" class="pc-select">
+                <option value="normal">Normal</option>
+                <option value="hard">Hard (tight spaces / high clutter)</option>
+              </select>
+            </label>
           </div>
         </div>
 
         <div class="pc-block">
           <div class="pc-label">Add-ons</div>
-          <div class="pc-addons">
-            <label class="pc-check">
-              <input type="checkbox" data-addon="inspection_report">
-              <span>Inspection report (+SGD 40)</span>
+
+          <div class="pc-addons" role="group" aria-label="Add-ons">
+            <label class="pc-addon">
+              <input type="checkbox" data-addon="inspection_report" />
+              <span class="pc-addon-text">
+                <span class="pc-addon-title">Inspection report</span>
+                <span class="pc-addon-meta">+ SGD 40</span>
+              </span>
             </label>
-            <label class="pc-check">
-              <input type="checkbox" data-addon="aftercare">
-              <span>30-day aftercare support (+SGD 30)</span>
+
+            <label class="pc-addon">
+              <input type="checkbox" data-addon="aftercare" />
+              <span class="pc-addon-text">
+                <span class="pc-addon-title">30-day aftercare support</span>
+                <span class="pc-addon-meta">+ SGD 30</span>
+              </span>
             </label>
-            <label class="pc-check">
-              <input type="checkbox" data-addon="gel_bait_upgrade">
-              <span>Gel bait upgrade (+SGD 35)</span>
+
+            <label class="pc-addon">
+              <input type="checkbox" data-addon="gel_bait_upgrade" />
+              <span class="pc-addon-text">
+                <span class="pc-addon-title">Gel bait upgrade</span>
+                <span class="pc-addon-meta">+ SGD 35</span>
+              </span>
             </label>
-            <label class="pc-check">
-              <input type="checkbox" data-addon="rodent_traps">
-              <span>Extra traps (rodents) (+SGD 45)</span>
+
+            <label class="pc-addon">
+              <input type="checkbox" data-addon="rodent_traps" />
+              <span class="pc-addon-text">
+                <span class="pc-addon-title">Extra traps (rodents)</span>
+                <span class="pc-addon-meta">+ SGD 45</span>
+              </span>
             </label>
-            <label class="pc-check">
-              <input type="checkbox" data-addon="follow_up_visit">
-              <span>Follow-up visit (+SGD 90)</span>
+
+            <label class="pc-addon">
+              <input type="checkbox" data-addon="follow_up_visit" />
+              <span class="pc-addon-text">
+                <span class="pc-addon-title">Follow-up visit</span>
+                <span class="pc-addon-meta">+ SGD 90</span>
+              </span>
             </label>
+          </div>
+
+          <div class="pc-hint">
+            Tip: For termites/bed bugs, the final quote often depends on infestation level — keep this as an estimate for demo.
           </div>
         </div>
       </div>
 
       <!-- RIGHT: Summary -->
-      <aside class="pc-panel pc-summary" aria-label="Quote Summary">
-        <div class="pc-sum-top">
-          <div class="pc-sum-title">Your estimate</div>
-          <div class="pc-sum-note">Final price may vary after onsite assessment.</div>
+      <aside class="pc-panel pc-summary" aria-label="Quote summary">
+        <div class="pc-sum-head">
+          <div>
+            <div class="pc-sum-title">Estimate</div>
+            <div class="pc-sum-sub">Live preview of selections + message output.</div>
+          </div>
+          <div class="pc-badge" id="pcBadge">Ready</div>
         </div>
 
-        <div class="pc-sum-box">
+        <div class="pc-card">
           <div class="pc-row">
             <div class="pc-k">Property</div>
             <div class="pc-v" id="pcOutProperty">HDB</div>
@@ -166,40 +150,47 @@
           <div class="pc-divider"></div>
 
           <div class="pc-row pc-row-top">
-            <div class="pc-k">Selected add-ons</div>
+            <div class="pc-k">Add-ons</div>
             <div class="pc-v pc-small" id="pcOutAddons">None</div>
           </div>
 
           <div class="pc-divider"></div>
 
           <div class="pc-total">
-            <div>Total</div>
+            <div class="pc-total-left">
+              <div class="pc-total-label">Total estimate</div>
+              <div class="pc-total-note">Includes plan + urgency + access + add-ons.</div>
+            </div>
             <div class="pc-money" id="pcOutTotal">SGD 0</div>
           </div>
         </div>
 
         <div class="pc-actions">
-          <button class="pc-btn" id="pcWhatsAppBtn" type="button">
+          <button class="pc-btn pc-primary" type="button" id="pcWhatsAppBtn">
             Send on WhatsApp
           </button>
-          <button class="pc-btn pc-ghost" id="pcCopyBtn" type="button">
+          <button class="pc-btn pc-ghost" type="button" id="pcCopyBtn">
             Copy message
           </button>
         </div>
 
-        <div class="pc-tip" id="pcTip" aria-live="polite"></div>
+        <div class="pc-toast" id="pcToast" aria-live="polite"></div>
+
+        <details class="pc-details">
+          <summary>Preview generated message</summary>
+          <pre class="pc-pre" id="pcPreviewMsg"></pre>
+        </details>
       </aside>
     </div>
   </section>
 
-  <!-- Astro inline script -->
   <script is:inline>
     (function () {
-      // ===== Config =====
-      const WHATSAPP_NUMBER = "6591837777"; // change this
+      // ===== CONFIG =====
+      const WHATSAPP_NUMBER = "6591837777"; // change if needed
       const CURRENCY = "SGD";
 
-      // Base prices
+      // Pricing model (demo-friendly, editable)
       const BASE_BY_PEST = {
         ants: 120,
         cockroaches: 150,
@@ -220,7 +211,7 @@
       const MULT_URGENCY = { standard: 1.0, urgent: 1.2 };
       const MULT_ACCESS = { normal: 1.0, hard: 1.15 };
 
-      // Plan multipliers (representing bundled pricing)
+      // Bundled plan multipliers
       const PLAN_MULT = {
         one_time: 1.0,
         quarterly: 2.6,
@@ -231,47 +222,76 @@
         inspection_report: { label: "Inspection report", price: 40 },
         aftercare: { label: "30-day aftercare support", price: 30 },
         gel_bait_upgrade: { label: "Gel bait upgrade", price: 35 },
-        rodent_traps: { label: "Extra traps", price: 45 },
+        rodent_traps: { label: "Extra traps (rodents)", price: 45 },
         follow_up_visit: { label: "Follow-up visit", price: 90 },
       };
 
-      // ===== State =====
+      // ===== DOM =====
+      const elProperty = document.getElementById("pcProperty");
+      const elPest = document.getElementById("pcPest");
+      const elPlan = document.getElementById("pcPlan");
+      const elUrgency = document.getElementById("pcUrgency");
+      const elAccess = document.getElementById("pcAccess");
+      const elAddonChecks = document.querySelectorAll('input[type="checkbox"][data-addon]');
+
+      const outProperty = document.getElementById("pcOutProperty");
+      const outPest = document.getElementById("pcOutPest");
+      const outPlan = document.getElementById("pcOutPlan");
+      const outUrgency = document.getElementById("pcOutUrgency");
+      const outAccess = document.getElementById("pcOutAccess");
+      const outAddons = document.getElementById("pcOutAddons");
+      const outTotal = document.getElementById("pcOutTotal");
+
+      const btnWA = document.getElementById("pcWhatsAppBtn");
+      const btnCopy = document.getElementById("pcCopyBtn");
+      const toast = document.getElementById("pcToast");
+      const badge = document.getElementById("pcBadge");
+      const preview = document.getElementById("pcPreviewMsg");
+
+      // ===== STATE =====
       const state = {
         property: "hdb",
         pest: "cockroaches",
-        pestLabel: "Cockroaches",
         plan: "one_time",
         urgency: "standard",
         access: "normal",
         addons: new Set(),
       };
 
-      // ===== Helpers =====
-      function money(n) {
-        // simple formatting; change if you want decimals
-        return `${CURRENCY} ${Math.round(n)}`;
-      }
-
-      function labelProperty(v){
+      // ===== LABELS =====
+      function labelProperty(v) {
         return v === "hdb" ? "HDB" :
                v === "condo" ? "Condo" :
                v === "landed" ? "Landed" : "Commercial";
       }
-
-      function labelPlan(v){
+      function labelPlan(v) {
         return v === "one_time" ? "One-time" :
                v === "quarterly" ? "Quarterly" : "Monthly";
       }
-
-      function labelUrgency(v){
+      function labelUrgency(v) {
         return v === "standard" ? "Standard" : "Urgent (same/next day)";
       }
-
-      function labelAccess(v){
-        return v === "normal" ? "Normal" : "Hard (tight areas / high clutter)";
+      function labelAccess(v) {
+        return v === "normal" ? "Normal" : "Hard (tight spaces / high clutter)";
+      }
+      function labelPest(v) {
+        const map = {
+          ants: "Ants",
+          cockroaches: "Cockroaches",
+          termites: "Termites",
+          bed_bugs: "Bed bugs",
+          mosquitoes: "Mosquitoes",
+          rodents: "Rodents",
+          general: "General pest",
+        };
+        return map[v] || "Pest";
       }
 
-      function computeTotal() {
+      function money(n) {
+        return `${CURRENCY} ${Math.round(n)}`;
+      }
+
+      function compute() {
         const base = BASE_BY_PEST[state.pest] || 0;
         const mult =
           (MULT_PROPERTY[state.property] || 1) *
@@ -279,15 +299,15 @@
           (MULT_URGENCY[state.urgency] || 1) *
           (MULT_ACCESS[state.access] || 1);
 
-        let subtotal = base * mult;
+        const serviceSubtotal = base * mult;
 
         let addonsTotal = 0;
         state.addons.forEach((k) => {
           addonsTotal += (ADDONS[k]?.price || 0);
         });
 
-        const total = subtotal + addonsTotal;
-        return { total, base, subtotal, addonsTotal };
+        const total = serviceSubtotal + addonsTotal;
+        return { base, serviceSubtotal, addonsTotal, total };
       }
 
       function buildMessage(total) {
@@ -297,7 +317,7 @@
           "Hi! I'd like a pest control quote:",
           "",
           `• Property: ${labelProperty(state.property)}`,
-          `• Pest: ${state.pestLabel}`,
+          `• Pest: ${labelPest(state.pest)}`,
           `• Plan: ${labelPlan(state.plan)}`,
           `• Urgency: ${labelUrgency(state.urgency)}`,
           `• Access: ${labelAccess(state.access)}`,
@@ -307,342 +327,453 @@
           "",
           "Please advise earliest availability. Thank you!",
         ];
-
         return lines.join("\n");
       }
 
-      function setActive(groupEl, value) {
-        groupEl.querySelectorAll("button").forEach((btn) => {
-          btn.classList.toggle("is-on", btn.getAttribute("data-value") === value);
-        });
+      function setToast(msg, kind) {
+        toast.textContent = msg;
+        toast.classList.remove("ok", "warn");
+        toast.classList.add(kind || "ok");
+        // stable height already reserved; this just fades in/out
+        toast.style.opacity = "1";
+        clearTimeout(setToast._t);
+        setToast._t = setTimeout(() => {
+          toast.style.opacity = "0";
+        }, 1600);
       }
 
-      function setActiveCards(groupEl, value) {
-        groupEl.querySelectorAll("button").forEach((btn) => {
-          btn.classList.toggle("is-on", btn.getAttribute("data-value") === value);
-        });
+      function setBadge(text) {
+        badge.textContent = text;
       }
 
       function render() {
-        const { total } = computeTotal();
+        const { total } = compute();
 
-        // Outputs
-        document.getElementById("pcOutProperty").textContent = labelProperty(state.property);
-        document.getElementById("pcOutPest").textContent = state.pestLabel;
-        document.getElementById("pcOutPlan").textContent = labelPlan(state.plan);
-        document.getElementById("pcOutUrgency").textContent = labelUrgency(state.urgency);
-        document.getElementById("pcOutAccess").textContent = labelAccess(state.access);
+        outProperty.textContent = labelProperty(state.property);
+        outPest.textContent = labelPest(state.pest);
+        outPlan.textContent = labelPlan(state.plan);
+        outUrgency.textContent = labelUrgency(state.urgency);
+        outAccess.textContent = labelAccess(state.access);
 
         const addonLabels = Array.from(state.addons).map((k) => ADDONS[k].label);
-        document.getElementById("pcOutAddons").textContent = addonLabels.length ? addonLabels.join(", ") : "None";
+        outAddons.textContent = addonLabels.length ? addonLabels.join(", ") : "None";
 
-        document.getElementById("pcOutTotal").textContent = money(total);
+        outTotal.textContent = money(total);
 
-        // Store message for actions
         const msg = buildMessage(total);
-        document.getElementById("pcWhatsAppBtn").setAttribute(
-          "data-wa",
-          `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`
-        );
-        document.getElementById("pcCopyBtn").setAttribute("data-msg", msg);
+        preview.textContent = msg;
+
+        btnWA.setAttribute("data-wa", `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`);
+        btnCopy.setAttribute("data-msg", msg);
+
+        setBadge("Updated");
+        clearTimeout(render._b);
+        render._b = setTimeout(() => setBadge("Ready"), 600);
       }
 
-      // ===== Bind groups =====
-      document.querySelectorAll('[data-group="property"]').forEach((group) => {
-        group.addEventListener("click", (e) => {
-          const btn = e.target.closest("button");
-          if (!btn) return;
-          state.property = btn.getAttribute("data-value");
-          setActive(group, state.property);
+      // ===== BINDINGS =====
+      function bindSelect(el, key) {
+        el.addEventListener("change", () => {
+          state[key] = el.value;
           render();
         });
-      });
+      }
 
-      document.querySelectorAll('[data-group="plan"]').forEach((group) => {
-        group.addEventListener("click", (e) => {
-          const btn = e.target.closest("button");
-          if (!btn) return;
-          state.plan = btn.getAttribute("data-value");
-          setActive(group, state.plan);
-          render();
-        });
-      });
+      bindSelect(elProperty, "property");
+      bindSelect(elPest, "pest");
+      bindSelect(elPlan, "plan");
+      bindSelect(elUrgency, "urgency");
+      bindSelect(elAccess, "access");
 
-      document.querySelectorAll('[data-group="urgency"]').forEach((group) => {
-        group.addEventListener("click", (e) => {
-          const btn = e.target.closest("button");
-          if (!btn) return;
-          state.urgency = btn.getAttribute("data-value");
-          setActive(group, state.urgency);
-          render();
-        });
-      });
-
-      document.querySelectorAll('[data-group="access"]').forEach((group) => {
-        group.addEventListener("click", (e) => {
-          const btn = e.target.closest("button");
-          if (!btn) return;
-          state.access = btn.getAttribute("data-value");
-          setActive(group, state.access);
-          render();
-        });
-      });
-
-      // Pest cards
-      document.querySelectorAll('[data-group="pest"]').forEach((group) => {
-        group.addEventListener("click", (e) => {
-          const btn = e.target.closest("button");
-          if (!btn) return;
-          state.pest = btn.getAttribute("data-value");
-          state.pestLabel = btn.getAttribute("data-label") || "Pest";
-          setActiveCards(group, state.pest);
-          render();
-        });
-      });
-
-      // Add-ons
-      document.querySelectorAll("input[type=checkbox][data-addon]").forEach((cb) => {
+      elAddonChecks.forEach((cb) => {
         cb.addEventListener("change", () => {
-          const key = cb.getAttribute("data-addon");
-          if (!key) return;
-          if (cb.checked) state.addons.add(key);
-          else state.addons.delete(key);
+          const k = cb.getAttribute("data-addon");
+          if (!k) return;
+          if (cb.checked) state.addons.add(k);
+          else state.addons.delete(k);
           render();
         });
       });
 
-      // Actions
-      const tip = document.getElementById("pcTip");
-
-      document.getElementById("pcWhatsAppBtn").addEventListener("click", () => {
-        const url = document.getElementById("pcWhatsAppBtn").getAttribute("data-wa");
+      btnWA.addEventListener("click", () => {
+        const url = btnWA.getAttribute("data-wa");
         window.open(url, "_blank", "noopener,noreferrer");
       });
 
-      document.getElementById("pcCopyBtn").addEventListener("click", async () => {
-        const msg = document.getElementById("pcCopyBtn").getAttribute("data-msg") || "";
+      btnCopy.addEventListener("click", async () => {
+        const msg = btnCopy.getAttribute("data-msg") || "";
         try {
           await navigator.clipboard.writeText(msg);
-          tip.textContent = "Copied message to clipboard.";
-          setTimeout(() => (tip.textContent = ""), 1800);
-        } catch (err) {
-          // fallback
-          tip.textContent = "Clipboard blocked. Select & copy manually from your browser.";
-          setTimeout(() => (tip.textContent = ""), 2200);
+          setToast("Copied message to clipboard.", "ok");
+        } catch (e) {
+          setToast("Clipboard blocked — copy from preview below.", "warn");
         }
       });
 
-      // Initial render
+      // Init from defaults
+      elProperty.value = state.property;
+      elPest.value = state.pest;
+      elPlan.value = state.plan;
+      elUrgency.value = state.urgency;
+      elAccess.value = state.access;
+
       render();
     })();
   </script>
 </main>
 
 <style>
-  /* Layout */
-  .pc-wrap{
-    max-width: 1100px;
-    margin: 40px auto;
+  /* ===== Modern, professional UI ===== */
+  .pc-wrap {
+    max-width: 1120px;
+    margin: 44px auto;
     padding: 0 16px;
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.92);
   }
-  .pc-head{ margin-bottom: 18px; }
-  .pc-title{ margin: 0 0 8px; font-size: 30px; letter-spacing:-0.02em; }
-  .pc-sub{ margin:0; opacity:.75; line-height:1.5; }
 
-  .pc-grid{
+  .pc-head {
+    margin-bottom: 18px;
+  }
+
+  .pc-title {
+    margin: 0 0 8px;
+    font-size: 32px;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+
+  .pc-sub {
+    margin: 0;
+    opacity: 0.72;
+    line-height: 1.55;
+    max-width: 70ch;
+  }
+
+  .pc-grid {
     display: grid;
-    grid-template-columns: 1.25fr .85fr;
-    gap: 18px;
+    grid-template-columns: 1.2fr 0.85fr;
+    gap: 16px;
     align-items: start;
   }
-  @media (max-width: 980px){
-    .pc-grid{ grid-template-columns: 1fr; }
+
+  @media (max-width: 980px) {
+    .pc-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
-  .pc-panel{
-    border: 1px solid rgba(0,0,0,.10);
-    background: #fff;
+  .pc-panel {
+    border: 1px solid rgba(0, 0, 0, 0.10);
     border-radius: 18px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
     padding: 16px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
   }
 
-  .pc-block{ margin-bottom: 14px; }
-  .pc-label{
+  .pc-block {
+    margin-bottom: 16px;
+  }
+
+  .pc-label {
     font-size: 13px;
-    font-weight: 650;
-    opacity: .8;
-    margin-bottom: 8px;
+    font-weight: 750;
+    opacity: 0.75;
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
   }
 
-  /* Chips */
-  .pc-choices{
-    display:flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .pc-chip{
-    border: 1px solid rgba(0,0,0,.14);
-    background: #fff;
-    border-radius: 999px;
-    padding: 10px 12px;
-    cursor: pointer;
-    font-weight: 650;
-    font-size: 13px;
-    transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-  }
-  .pc-chip:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,.06); }
-  .pc-chip.is-on{
-    border-color: rgba(0,0,0,.55);
-    box-shadow: 0 12px 24px rgba(0,0,0,.10);
-  }
-
-  .pc-2col{
-    display:grid;
+  /* Form layout */
+  .pc-form {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
-  @media (max-width: 540px){
-    .pc-2col{ grid-template-columns: 1fr; }
-  }
-
-  /* Pest Cards */
-  .pc-cards{
-    display:grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
     gap: 12px;
   }
-  @media (max-width: 980px){
-    .pc-cards{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-  }
-  @media (max-width: 520px){
-    .pc-cards{ grid-template-columns: 1fr; }
+
+  @media (max-width: 620px) {
+    .pc-form {
+      grid-template-columns: 1fr;
+    }
   }
 
-  .pc-card{
-    padding:0;
-    text-align:left;
-    border: 1px solid rgba(0,0,0,.12);
-    border-radius: 16px;
-    overflow:hidden;
-    cursor:pointer;
-    background:#fff;
-    transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+  .pc-field {
+    display: grid;
+    gap: 8px;
   }
-  .pc-card:hover{
-    transform: translateY(-1px);
-    box-shadow: 0 12px 26px rgba(0,0,0,.08);
+
+  .pc-field-label {
+    font-size: 13px;
+    font-weight: 700;
+    opacity: 0.78;
   }
-  .pc-card.is-on{
-    border-color: rgba(0,0,0,.55);
-    box-shadow: 0 14px 30px rgba(0,0,0,.12);
+
+  .pc-select {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    background: #fff;
+    border-radius: 14px;
+    padding: 12px 12px;
+    font-weight: 650;
+    font-size: 14px;
+    outline: none;
+    transition: box-shadow 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
   }
-  .pc-card img{
-    width:100%;
-    height: 110px;
-    object-fit: cover;
-    display:block;
-    background: rgba(0,0,0,.04);
+
+  .pc-select:focus {
+    border-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
   }
-  .pc-card-body{ padding: 10px 10px 12px; }
-  .pc-card-title{ font-weight: 800; font-size: 14px; margin:0 0 4px; }
-  .pc-card-meta{ font-size: 12px; opacity: .72; }
 
   /* Add-ons */
-  .pc-addons{
-    display:grid;
+  .pc-addons {
+    display: grid;
     gap: 10px;
   }
-  .pc-check{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size: 13px;
-    border: 1px solid rgba(0,0,0,.10);
-    border-radius: 14px;
-    padding: 10px 12px;
-    background: rgba(0,0,0,.02);
+
+  .pc-addon {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 10px;
+    align-items: start;
+    padding: 12px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
   }
-  .pc-check input{ transform: scale(1.05); }
+
+  .pc-addon:hover {
+    transform: translateY(-1px);
+    border-color: rgba(0, 0, 0, 0.18);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.06);
+  }
+
+  .pc-addon input {
+    margin-top: 2px;
+    transform: scale(1.05);
+  }
+
+  .pc-addon-text {
+    display: grid;
+    gap: 4px;
+  }
+
+  .pc-addon-title {
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  .pc-addon-meta {
+    font-size: 13px;
+    opacity: 0.70;
+  }
+
+  .pc-hint {
+    margin-top: 10px;
+    font-size: 13px;
+    opacity: 0.68;
+    line-height: 1.5;
+  }
 
   /* Summary */
-  .pc-summary{
+  .pc-summary {
     position: sticky;
     top: 14px;
   }
-  @media (max-width: 980px){
-    .pc-summary{ position: static; }
+
+  @media (max-width: 980px) {
+    .pc-summary {
+      position: static;
+    }
   }
 
-  .pc-sum-title{ font-size: 16px; font-weight: 900; margin-bottom: 6px; }
-  .pc-sum-note{ font-size: 13px; opacity:.7; line-height:1.45; }
-
-  .pc-sum-box{
-    margin-top: 14px;
-    border-radius: 16px;
-    background: rgba(0,0,0,.035);
-    padding: 12px;
-  }
-  .pc-row{
-    display:flex;
+  .pc-sum-head {
+    display: flex;
+    align-items: flex-start;
     justify-content: space-between;
-    gap: 14px;
-    padding: 7px 4px;
-  }
-  .pc-k{ font-size: 13px; opacity: .75; }
-  .pc-v{ font-size: 13px; font-weight: 750; text-align:right; }
-  .pc-small{ font-weight: 650; opacity: .9; }
-
-  .pc-divider{
-    height: 1px;
-    background: rgba(0,0,0,.10);
-    margin: 10px 0;
+    gap: 10px;
+    margin-bottom: 12px;
   }
 
-  .pc-total{
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    padding: 6px 4px 2px;
+  .pc-sum-title {
     font-weight: 900;
+    font-size: 16px;
+    margin-bottom: 4px;
   }
-  .pc-money{
-    font-size: 18px;
-    letter-spacing: -0.01em;
+
+  .pc-sum-sub {
+    font-size: 13px;
+    opacity: 0.70;
+    line-height: 1.45;
+  }
+
+  .pc-badge {
+    font-size: 12px;
+    font-weight: 850;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: rgba(0, 0, 0, 0.03);
     white-space: nowrap;
   }
 
-  .pc-actions{
-    display:grid;
+  .pc-card {
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.03);
+    padding: 12px 12px;
+  }
+
+  .pc-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 7px 6px;
+  }
+
+  .pc-row-top {
+    align-items: flex-start;
+  }
+
+  .pc-k {
+    font-size: 13px;
+    opacity: 0.72;
+  }
+
+  .pc-v {
+    font-size: 13px;
+    font-weight: 800;
+    text-align: right;
+  }
+
+  .pc-small {
+    font-weight: 650;
+    opacity: 0.88;
+    max-width: 44ch;
+  }
+
+  .pc-divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.10);
+    margin: 10px 0;
+  }
+
+  .pc-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 6px 6px 4px;
+  }
+
+  .pc-total-label {
+    font-size: 13px;
+    font-weight: 850;
+    opacity: 0.85;
+  }
+
+  .pc-total-note {
+    font-size: 12px;
+    opacity: 0.68;
+    margin-top: 4px;
+    line-height: 1.35;
+  }
+
+  .pc-money {
+    font-size: 20px;
+    font-weight: 950;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .pc-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin-top: 12px;
   }
-  .pc-btn{
-    width:100%;
-    border: 1px solid rgba(0,0,0,.15);
+
+  @media (max-width: 420px) {
+    .pc-actions {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .pc-btn {
     border-radius: 14px;
     padding: 12px 12px;
-    font-weight: 850;
-    cursor:pointer;
-    background:#111;
-    color:#fff;
-    transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    font-weight: 900;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+    width: 100%;
   }
-  .pc-btn:hover{
+
+  .pc-btn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 14px 28px rgba(0,0,0,.14);
-  }
-  .pc-btn:active{ transform: translateY(0px); opacity:.92; }
-
-  .pc-ghost{
-    background:#fff;
-    color:#111;
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.10);
   }
 
-  .pc-tip{
+  .pc-btn:active {
+    transform: translateY(0px);
+    opacity: 0.92;
+  }
+
+  .pc-primary {
+    background: #111;
+    color: #fff;
+  }
+
+  .pc-ghost {
+    background: #fff;
+    color: #111;
+  }
+
+  /* Toast (reserves height to avoid layout jump) */
+  .pc-toast {
     margin-top: 10px;
+    min-height: 18px;
     font-size: 13px;
-    opacity: .8;
-    min-height: 18px; /* keeps layout stable */
+    opacity: 0;
+    transition: opacity 0.18s ease;
+  }
+
+  .pc-toast.ok {
+    color: rgba(0, 0, 0, 0.78);
+  }
+
+  .pc-toast.warn {
+    color: rgba(180, 60, 30, 0.95);
+  }
+
+  .pc-details {
+    margin-top: 10px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: rgba(255, 255, 255, 0.6);
+    overflow: hidden;
+  }
+
+  .pc-details > summary {
+    cursor: pointer;
+    padding: 10px 12px;
+    font-weight: 850;
+    font-size: 13px;
+    opacity: 0.85;
+    outline: none;
+    user-select: none;
+  }
+
+  .pc-pre {
+    margin: 0;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 1.45;
+    white-space: pre-wrap;
+    word-break: break-word;
+    opacity: 0.9;
   }
 </style>
